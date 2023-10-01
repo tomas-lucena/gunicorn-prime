@@ -17,7 +17,7 @@ def is_prime(number):
 app = Flask(__name__)
 
 @app.route("/<int:n_range>")
-def hello_world(n_range):
+def _is_prime(n_range):
     
     primes = list()
     for i in range(n_range):
@@ -27,3 +27,8 @@ def hello_world(n_range):
         primes += [i]
 
     return f"{len(primes)}\n"
+
+@app.route("/")
+def hello_world():
+    
+    return f"Hello world\n"
